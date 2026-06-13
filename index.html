@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6c63ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Tarefas">
+  <meta name="description" content="Uma lista de tarefas simples, rápida e disponível offline.">
+  <title>Minha Lista de Tarefas</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <p class="eyebrow">Organize seu dia</p>
+      <h1>Minhas tarefas</h1>
+      <p id="task-summary" class="summary" aria-live="polite">Nenhuma tarefa por enquanto</p>
+      <button id="install-button" class="install-button" type="button" hidden>
+        Instalar app
+      </button>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <label class="sr-only" for="task-input">Nova tarefa</label>
+      <input
+        id="task-input"
+        type="text"
+        placeholder="O que precisa ser feito?"
+        maxlength="120"
+        autocomplete="off"
+        required
+      >
+      <button type="submit" aria-label="Adicionar tarefa">+</button>
+    </form>
+
+    <section class="tasks" aria-labelledby="tasks-title">
+      <h2 id="tasks-title" class="sr-only">Lista de tarefas</h2>
+      <ul id="task-list"></ul>
+
+      <div id="empty-state" class="empty-state">
+        <div class="empty-state__icon" aria-hidden="true">✓</div>
+        <h2>Tudo em ordem!</h2>
+        <p>Adicione uma tarefa para começar.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
